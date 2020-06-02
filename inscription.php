@@ -1,5 +1,5 @@
 <?php
-$page_selected = 'inscription';
+$page_selected = "inscription";
  ?>
 
  <!DOCTYPE html>
@@ -38,6 +38,10 @@ $page_selected = 'inscription';
          if (!$password_required)
          {
            $errors[] = "Password must :<br>- contain between 8 and 20 characters<br>- contain at least : 1 special character, 1 number, 1 upper and 1 lower case."
+         }
+         if ($password_init != $password_conf)
+         {
+           $errors[] = "Passwords are not identical."
          }
 
          /*ENVOI BDD*/
