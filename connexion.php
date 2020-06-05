@@ -20,30 +20,31 @@ $page_selected = "connexion";
       {
         /*LOGIN*/
         $login = $_POST['login'];
-        $request = "SELECT login FROM utilisateurs WHERE login = '" . $login . "';";
+        $request = "SELECT id FROM utilisateurs WHERE login = '" . $login . "';";
         $query = mysqli_query($db, $request);
         $login_check = mysqli_fetch_array($query);
         if (empty($login_check))
         {
-          $errors[] = "This user does not exists."
+          $errors[] = "This user does not exists.";
         }
-
         /*PASSWORD*/
-        $password = $_POST['password'];
-        $request = "SELECT password FROM utilisateurs WHERE id = '" . $login_check[0] . "';";
-        $query = mysqli_query($db, $request);
-        $password_check = mysqli_fetch_array($query);
-        if (password_verify($password, $password_check[0]))
-        {
-          $_SESSION['id'] = $login_check[0];
-          header('location: index.php');
-        }
-        else
-        {
-          $errors[] = "Password is incorrect."
+        else {
+          $password = $_POST['password'];
+          $request = "SELECT password FROM utilisateurs WHERE id = '" . $login_check[0] . "';";
+          $query = mysqli_query($db, $request);
+          $password_check = mysqli_fetch_array($query);
+          if (password_verify($password, $password_check[0]))
+          {
+            $_SESSION['id'] = $login_check[0];
+            header('location: index.php');
+          }
+          else
+          {
+            $errors[] = "Password is incorrect.";
+          }
         }
       }
-      elseif (empty($_POST))
+      elseif (!empty($_POST))
       {
         $errors[] = "Every field must be filled.";
       }
@@ -51,6 +52,8 @@ $page_selected = "connexion";
     </header>
     <main>
       <div class="content">
+        <?= renderErrors($errors) ?>
+        <h2>Log in</h2>
         <form class="" action="connexion.php" method="post">
           <div class="form_element">
             <label for="login">Login</label>
@@ -58,10 +61,11 @@ $page_selected = "connexion";
           </div>
           <div class="form_element">
             <label for="password">Password</label>
-            <input type="text" name="password" value="" placeholder="password">
+            <input type="password" name="password" value="" placeholder="password">
           </div>
           <button type="submit" name="connect_submit">Log in</button>
         </form>
+        <p>If you don't have an account yet, you can <a href="inscription.php">register here</a>.</p>
       </div>
     </main>
     <footer>

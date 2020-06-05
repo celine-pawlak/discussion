@@ -1,13 +1,13 @@
 <?php
 session_start();
 
-$db = mysqli_connect("localhost","root","","discussion");
+$db = mysqli_connect("localhost", "root", "", "discussion");
 
 /*redirections de sessions*/
 
-if ($page_selected == "profil" AND !$_SESSION['id'])
+if (in_array($page_selected, ['profil','discussion']) AND !$_SESSION['id'])
 {
-  header('location: connexion.php')
+  header('location: connexion.php');
 }
 if (in_array($page_selected, ['connexion','inscription']) AND isset($_SESSION['id']))
 {
@@ -59,7 +59,7 @@ function renderErrors($errors)
     <a href="discussion.php"><h1>Chat</h1></a>
   </div>
   <div class="header_3">
-    <?php if (isset $_SESSION['id'])
+    <?php if (isset($_SESSION['id']))
     { ?>
       <ul>
         <li class="liste">

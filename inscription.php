@@ -14,7 +14,7 @@ $page_selected = "inscription";
      <header>
        <?php include 'header.php';
        $errors = [];
-       if (!empty($_POST['login']) AND !empty($_POST['password']) AND !empty($_POST['conf_password']))
+       if (!empty($_POST['login']) AND !empty($_POST['password']) AND !empty($_POST['password_conf']))
        {
          /*LOGIN*/
          $login = $_POST['login'];
@@ -33,27 +33,27 @@ $page_selected = "inscription";
 
          /*PASSWORD*/
          $password_init = $_POST['password'];
-         $password_conf = $_POST['conf_password'];
-         $password_required = match_preg("/^(?=.*?[A-Z]{1,})(?=.*?[a-z]{1,})(?=.*?[0-9]{1,})(?=.*?[\W]{1,}).{8,20}$/", $password_init);
+         $password_conf = $_POST['password_conf'];
+         $password_required = preg_match("/^(?=.*?[A-Z]{1,})(?=.*?[a-z]{1,})(?=.*?[0-9]{1,})(?=.*?[\W]{1,}).{8,20}$/", $password_init);
          if (!$password_required)
          {
-           $errors[] = "Password must :<br>- contain between 8 and 20 characters<br>- contain at least : 1 special character, 1 number, 1 upper and 1 lower case."
+           $errors[] = "Password must :<br>- contain between 8 and 20 characters<br>- contain at least : 1 special character, 1 number, 1 upper and 1 lower case.";
          }
          if ($password_init != $password_conf)
          {
-           $errors[] = "Passwords are not identical."
+           $errors[] = "Passwords are not identical.";
          }
 
          /*ENVOI BDD*/
          if (empty($errors))
          {
            $password_modified = password_hash($password_init, PASSWORD_BCRYPT, array('cost' => 10));
-           $request = "INSERT INTO utilisateurs(login, password) VALUES ('" . $login . "', '" . $password_modified . "');";
+           $request = "INSERT INTO utilisateurs(login, password) VALUES ('" . $login . "','" . $password_modified . "')";
            $query = mysqli_query($db, $request);
            header('location: connexion.php');
          }
        }
-       elseif (empty($_POST))
+       elseif (!empty($_POST))
        {
          $errors[] = "Every field must be filled.";
        }
@@ -63,7 +63,7 @@ $page_selected = "inscription";
      <main>
        <div class="content">
          <?= renderErrors($errors) ?>
-         <h2>Resgiter</h2>
+         <h2>Register</h2>
          <form class="" action="inscription.php" method="post">
            <div class="form_element">
              <label for="login">Login</label>
@@ -71,11 +71,11 @@ $page_selected = "inscription";
            </div>
            <div class="form_element">
              <label for="password">Password</label>
-             <input type="text" name="password" value="" placeholder="password">
+             <input type="password" name="password" value="" placeholder="password">
            </div>
            <div class="form_element">
              <label for="password_conf">Confirm password</label>
-             <input type="text" name="password_conf" value="" placeholder="confirm password">
+             <input type="password" name="password_conf" value="" placeholder="confirm password">
            </div>
            <button type="submit" name="register_submit">Register</button>
          </form>
