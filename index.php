@@ -6,7 +6,9 @@ $page_selected = "index";
  <html lang="fr" dir="ltr">
    <head>
      <meta charset="utf-8">
-     <title></title>
+     <link rel="stylesheet" href="styles/css/discussion.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Home - Discussion</title>
    </head>
    <body>
      <header>

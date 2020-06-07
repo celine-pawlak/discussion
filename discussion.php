@@ -25,8 +25,7 @@ $page_selected = "discussion";
           $request = "SELECT * FROM messages";
           $query = mysqli_query($db, $request);
           $messages_registered = mysqli_fetch_all($query);
-          ?>
-          <?php foreach ($messages_registered as $key => $message_registered) { ?>
+          foreach ($messages_registered as $key => $message_registered) { ?>
             <div class="message">
               <?php
               $request = "SELECT login FROM utilisateurs WHERE id = '" . $message_registered[2] . "';";

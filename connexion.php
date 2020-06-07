@@ -57,11 +57,11 @@ $page_selected = "connexion";
         <form class="" action="connexion.php" method="post">
           <div class="form_element">
             <label for="login">Login</label>
-            <input type="text" name="login" value="" placeholder="login">
+            <input type="text" name="login" value="" placeholder="login" required>
           </div>
           <div class="form_element">
             <label for="password">Password</label>
-            <input type="password" name="password" value="" placeholder="password">
+            <input type="password" name="password" value="" placeholder="password" required>
           </div>
           <button type="submit" name="connect_submit">Log in</button>
         </form>

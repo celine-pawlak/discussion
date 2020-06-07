@@ -73,7 +73,7 @@ function renderErrors($errors)
     <?php }
     else { ?>
         <a href="connexion.php"><h1>Connect</h1></a>
-        <p>or</p>
+        <?="&nbsp;"?><p>or</p><?="&nbsp;"?>
         <a href="inscription.php"><h1>Register</h1></a>
     <?php } ?>
   </div>

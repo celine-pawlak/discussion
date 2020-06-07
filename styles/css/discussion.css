@@ -1,0 +1,113 @@
+:root{
+  --color-one : #337A66;
+  --color-two : #B5FBE7;
+  --color-three : #6AFAD0;
+  --color-four : #587A71;
+  --color-five : #54C7A6;
+  --color-six : #090D0C;
+}
+
+@font-face {font-family:'Title';src: url('../font/CormorantGaramond-Regular.ttf');}
+@font-face {font-family:'Headline';src: url('../font/SourceCodePro-Regular.ttf');}
+@font-face {font-family:'Normal';src: url('../font/Dosis-VariableFont_wght.ttf');}
+
+html, body{
+  margin: 0;
+  padding: 0;
+}
+
+* a{
+  text-decoration: none;
+  color: inherit;
+  transition: transform ease 50ms;
+}
+
+a > *:hover{
+  transform: scale(1.1);
+}
+
+ul, li{
+  list-style: none;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-six);
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-weight: inherit;
+}
+
+/*HEADER*/
+
+header{
+  background-color: var(--color-one);
+  color:white;
+  box-shadow: 0 0.5px 3px 0.1px var(--color-six);
+  z-index: 3;
+}
+
+nav{
+  max-width: 1300px;
+  margin: 0 auto;
+  height: 8vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: 'Headline';
+}
+nav div{
+  flex:1;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav *{
+  margin: 0;
+}
+
+.liste{
+  position: relative;
+}
+.sous_liste{
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  width: 100%;
+}
+.liste:hover .sous_liste{
+  opacity: 1;
+  visibility:visible;
+}
+
+/*MAIN*/
+
+main{
+  display: flex;
+}
+
+.content{
+  max-width: 1200px;
+  min-width: 80vw;
+  margin: 0 auto;
+  height: 80vh;
+  background-color: var(--color-four);
+
+}
+
+/*FOOTER*/
+
+footer{
+  height: 12vh;
+  background-color: var(--color-five);
+  box-shadow: 0 -0.1px 3px 0.05px var(--color-six);
+}

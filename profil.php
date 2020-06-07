@@ -99,11 +99,11 @@ $page_selected = "profil";
            <h3>Modify Login</h3>
            <div class="form_element">
              <label for="new_login">New login</label>
-             <input type="text" name="new_login" value="" placeholder="new login">
+             <input type="text" name="new_login" value="" placeholder="new login" required>
            </div>
            <div class="form_element">
              <label for="new_login_conf">Confirm new login</label>
-             <input type="text" name="new_login_conf" value="" placeholder="confirm new login">
+             <input type="text" name="new_login_conf" value="" placeholder="confirm new login" required>
            </div>
            <button type="submit" name="new_login_submit">Confirm new login</button>
          </form>
@@ -111,15 +111,15 @@ $page_selected = "profil";
            <h3>Modify password</h3>
            <div class="form_element">
              <label for="old_pass">Old password</label>
-             <input type="password" name="old_pass" value="" placeholder="old password">
+             <input type="password" name="old_pass" value="" placeholder="old password" required>
            </div>
            <div class="form_element">
              <label for="new_pass">New password</label>
-             <input type="password" name="new_pass" value="" placeholder="new password">
+             <input type="password" name="new_pass" value="" placeholder="new password" required>
            </div>
            <div class="form_element">
              <label for="old_pass_conf">Confirm old password</label>
-             <input type="password" name="new_pass_conf" value="" placeholder="confirm new password">
+             <input type="password" name="new_pass_conf" value="" placeholder="confirm new password" required>
            </div>
            <button type="submit" name="new_pass_submit">Confirm new password</button>
          </form>
