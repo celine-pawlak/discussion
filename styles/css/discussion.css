@@ -1,15 +1,15 @@
 :root{
-  --color-one : #337A66;
-  --color-two : #B5FBE7;
-  --color-three : #6AFAD0;
-  --color-four : #587A71;
+  --color-one : #003089;
+  --color-two : #000153;
+  --color-three : #949599;
+  --color-four : #00E3C1;
   --color-five : #54C7A6;
   --color-six : #090D0C;
 }
 
 @font-face {font-family:'Title';src: url('../font/CormorantGaramond-Regular.ttf');}
-@font-face {font-family:'Headline';src: url('../font/SourceCodePro-Regular.ttf');}
-@font-face {font-family:'Normal';src: url('../font/Dosis-VariableFont_wght.ttf');}
+@font-face {font-family:'Headline';src: url('../font/Gruppo-Regular.ttf');}
+@font-face {font-family:'Normal';src: url('../font/NanumGothicCoding-Regular.ttf');}
 
 html, body{
   margin: 0;
@@ -101,7 +101,7 @@ main{
   margin: 0 auto;
   height: 80vh;
   background-color: var(--color-four);
-
+  font-family: 'Normal';
 }
 
 /*FOOTER*/
