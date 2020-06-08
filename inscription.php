@@ -65,20 +65,20 @@ $page_selected = "inscription";
        <div class="content">
          <?= renderErrors($errors) ?>
          <h2>Register</h2>
-         <form class="" action="inscription.php" method="post">
+         <form class="css_base2 form_center" action="inscription.php" method="post">
            <div class="form_element">
              <label for="login">Login</label>
-             <input type="text" name="login" value="" placeholder="login" required>
+             <input class="css_base2" type="text" name="login" value="" placeholder="login" required>
            </div>
            <div class="form_element">
              <label for="password">Password</label>
-             <input type="password" name="password" value="" placeholder="password" required>
+             <input class="css_base2" type="password" name="password" value="" placeholder="password" required>
            </div>
            <div class="form_element">
              <label for="password_conf">Confirm password</label>
-             <input type="password" name="password_conf" value="" placeholder="confirm password" required>
+             <input class="css_base2" type="password" name="password_conf" value="" placeholder="confirm password" required>
            </div>
-           <button type="submit" name="register_submit">Register</button>
+           <button class="css_base2 button_form" type="submit" name="register_submit">Register</button>
          </form>
        </div>
      </main>

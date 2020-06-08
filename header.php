@@ -38,7 +38,7 @@ function renderErrors($errors)
     {
       $output = $errors[0];
     }
-    return "<div class=\"ErrorMessage\">"
+    return "<div class=\"ErrorMessage margin1\">"
       . $output .
       "</div>";
   }
@@ -75,6 +75,7 @@ function renderErrors($errors)
       <div class="hand">
         <a href="connexion.php"><i class="fa fa-hand-point-right"></i><h1> Connect</h1></a>
       </div>
+      <?="&nbsp;"?>
       <p>or</p>
       <div class="hand">
           <a href="inscription.php"><i class="fa fa-hand-point-right"></i><h1> Register</h1></a>

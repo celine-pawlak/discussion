@@ -96,35 +96,38 @@ $page_selected = "profil";
        <div class="content">
          <?= renderErrors($errors) ?>
          <h2>Profile</h2>
-         <form class="" action="profil.php" method="post">
+         <form class="css_base2 form_center" action="profil.php" method="post">
            <h3>Modify Login</h3>
            <div class="form_element">
              <label for="new_login">New login</label>
-             <input type="text" name="new_login" value="" placeholder="new login" required>
+             <input class="css_base2" type="text" name="new_login" value="" placeholder="new login" required>
            </div>
            <div class="form_element">
              <label for="new_login_conf">Confirm new login</label>
-             <input type="text" name="new_login_conf" value="" placeholder="confirm new login" required>
+             <input class="css_base2" type="text" name="new_login_conf" value="" placeholder="confirm new login" required>
            </div>
-           <button type="submit" name="new_login_submit">Confirm new login</button>
+           <button class="css_base2 button_form" type="submit" name="new_login_submit">Confirm new login</button>
          </form>
-         <form class="" action="profil.php" method="post">
+         <form class="css_base2 form_center" action="profil.php" method="post">
            <h3>Modify password</h3>
            <div class="form_element">
              <label for="old_pass">Old password</label>
-             <input type="password" name="old_pass" value="" placeholder="old password" required>
+             <input class="css_base2" type="password" name="old_pass" value="" placeholder="old password" required>
            </div>
            <div class="form_element">
              <label for="new_pass">New password</label>
-             <input type="password" name="new_pass" value="" placeholder="new password" required>
+             <input class="css_base2" type="password" name="new_pass" value="" placeholder="new password" required>
            </div>
            <div class="form_element">
-             <label for="old_pass_conf">Confirm old password</label>
-             <input type="password" name="new_pass_conf" value="" placeholder="confirm new password" required>
+             <label for="old_pass_conf">Confirm new password</label>
+             <input class="css_base2" type="password" name="new_pass_conf" value="" placeholder="confirm new password" required>
            </div>
-           <button type="submit" name="new_pass_submit">Confirm new password</button>
+           <button class="css_base2 button_form" type="submit" name="new_pass_submit">Confirm new password</button>
          </form>
        </div>
      </main>
+    <footer>
+
+    </footer>
    </body>
  </html>

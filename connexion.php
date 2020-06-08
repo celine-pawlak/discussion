@@ -55,18 +55,18 @@ $page_selected = "connexion";
       <div class="content">
         <?= renderErrors($errors) ?>
         <h2>Log in</h2>
-        <form class="" action="connexion.php" method="post">
+        <form class="css_base2 form_center" action="connexion.php" method="post">
           <div class="form_element">
             <label for="login">Login</label>
-            <input type="text" name="login" value="" placeholder="login" required>
+            <input class="css_base2" type="text" name="login" value="" placeholder="login" required>
           </div>
           <div class="form_element">
             <label for="password">Password</label>
-            <input type="password" name="password" value="" placeholder="password" required>
+            <input class="css_base2" type="password" name="password" value="" placeholder="password" required>
           </div>
-          <button type="submit" name="connect_submit">Log in</button>
+          <button class="css_base2 button_form" type="submit" name="connect_submit">Log in</button>
         </form>
-        <p>If you don't have an account yet, you can <a href="inscription.php">register here</a>.</p>
+        <p class="margin1 blue">If you don't have an account yet, you can <a href="inscription.php">register here</a>.</p>
       </div>
     </main>
     <footer>
