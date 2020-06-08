@@ -7,6 +7,7 @@ $page_selected = "profil";
    <head>
      <meta charset="utf-8">
      <title>Profile - Discussion</title>
+     <link rel="stylesheet" href="styles/css/fa.css">
      <link rel="stylesheet"  type="text/css" href="styles/css/discussion.css">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>

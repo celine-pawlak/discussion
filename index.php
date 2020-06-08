@@ -7,6 +7,7 @@ $page_selected = "index";
    <head>
      <meta charset="utf-8">
      <link rel="stylesheet" href="styles/css/discussion.css">
+     <link rel="stylesheet" href="styles/css/fa.css">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Home - Discussion</title>
    </head>

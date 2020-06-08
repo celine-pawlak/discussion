@@ -52,29 +52,33 @@ function renderErrors($errors)
 <!-- header html -->
 
 <nav>
-  <div class="header_1">
-    <a href="index.php"><h1>Home</h1></a>
+  <div class="header_1 hand">
+    <a href="index.php"><i class="fa fa-hand-point-right"></i><h1>Home</h1></a>
   </div>
-  <div class="header_2">
-    <a href="discussion.php"><h1>Chat</h1></a>
+  <div class="header_2 hand">
+    <a href="discussion.php"><i class="fa fa-hand-point-right"></i><h1>Chat</h1></a>
   </div>
   <div class="header_3">
     <?php if (isset($_SESSION['id']))
     { ?>
       <ul>
         <li class="liste">
-          <h1>My account</h1>
-          <ul class="sous_liste">
-            <li><a href="profil.php">Modify login and/or password</a></li>
-            <li><a href="delete_session.php">Disconnect</a></li>
+          <i class="fa fa-hand-point-right hand_1"></i><h1> My account</h1>
+          <ul class="sous_liste css_base">
+            <li><i class="fa fa-hand-point-right hand_2"></i><a href="profil.php">Modify login and/or password</a></li>
+            <li><i class="fa fa-hand-point-right hand_2"></i><a href="delete_session.php">Disconnect</a></li>
           </ul>
         </li>
       </ul>
     <?php }
     else { ?>
-        <a href="connexion.php"><h1>Connect</h1></a>
-        <?="&nbsp;"?><p>or</p><?="&nbsp;"?>
-        <a href="inscription.php"><h1>Register</h1></a>
+      <div class="hand">
+        <a href="connexion.php"><i class="fa fa-hand-point-right"></i><h1> Connect</h1></a>
+      </div>
+      <p>or</p>
+      <div class="hand">
+          <a href="inscription.php"><i class="fa fa-hand-point-right"></i><h1> Register</h1></a>
+      </div>
     <?php } ?>
   </div>
 </nav>

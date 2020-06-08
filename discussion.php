@@ -8,6 +8,7 @@ $page_selected = "discussion";
     <meta charset="utf-8">
     <title>Chat - Discussion</title>
     <link rel="stylesheet" href="styles/css/discussion.css">
+    <link rel="stylesheet" href="styles/css/fa.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
@@ -20,7 +21,7 @@ $page_selected = "discussion";
     <main>
       <div class="content">
         <?= renderErrors($errors) ?>
-        <div class="chat_box">
+        <div class="chat_box css_base2">
           <?php
           $request = "SELECT * FROM messages";
           $query = mysqli_query($db, $request);
@@ -44,8 +45,8 @@ $page_selected = "discussion";
         </div>
         <div class="add_message">
           <form class="form_discussion" action="discussion.php" method="post">
-            <textarea  class="textarea_message" name="message" value="" placeholder="Send your message" rows="2" required></textarea>
-            <button class="button_message" type="submit" name="submit_message">Send</button>
+            <textarea  class="textarea_message css_base2" name="message" value="" placeholder="Send your message" rows="2" required></textarea>
+            <button class="button_message css_base2" type="submit" name="submit_message"><i class="far fa-share-square"></i></button>
           </form>
         </div>
       </div>

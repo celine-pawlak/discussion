@@ -34,6 +34,7 @@ ul, li{
 
 * {
   box-sizing: border-box;
+  transition: opacity ease 100ms;
 }
 
 body{
@@ -45,6 +46,19 @@ body{
 
 h1, h2, h3, h4, h5, h6{
   font-weight: inherit;
+}
+p{
+  margin:0;
+}
+.css_base{
+  background: linear-gradient(to bottom, var(--color-one),var(--color-two));
+  border: 1px solid var(--color-three);
+  border-radius: 10px;
+}
+.css_base2{
+  background: linear-gradient(to bottom, var(--color-one),var(--color-two));
+  border: 2px solid var(--color-three);
+  border-radius: 10px;
 }
 
 /*HEADER*/
@@ -81,12 +95,21 @@ nav *{
 
 .liste{
   position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 .sous_liste{
   position: absolute;
+  right:0;
+  top:100%;
   opacity: 0;
   visibility: hidden;
-  width: 100%;
+  width: 200%;
+  z-index: 4;
+}
+.sous_liste li{
+  margin:0.5rem;
 }
 .liste:hover .sous_liste{
   opacity: 1;
@@ -116,11 +139,6 @@ main{
 
 /*DISCUSSION*/
 
-.chat_box, .textarea_message, .button_message{
-  background: linear-gradient(to bottom, var(--color-one),var(--color-two));
-  border: 2px solid var(--color-three);
-  border-radius: 10px;
-}
 .chat_box{
   display: flex;
   flex-direction: column;
@@ -139,7 +157,7 @@ main{
   background-color: var(--color-three);
 }
 .chat_box::-webkit-scrollbar-thumb{
-  background-color: var(--color-four);
+  background-color: white;
   border-radius: 5px;
 }
 .add_message{
@@ -149,6 +167,7 @@ main{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 .textarea_message:focus{
   opacity:1;
@@ -158,15 +177,23 @@ main{
   min-width: 80%;
   opacity: 0.5;
   margin-right: 1rem;
+  padding: 0.5rem;
 }
 .button_message{
-  height: 40px;
+  height: 50px;
   flex: 1;
   color:white;
 }
+.button_message:hover{
+  transform: scale(0.98);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.19), 0 3px 3px rgba(0, 0, 0, 0.23);
+}
 .message{
-  margin: 1rem;
-  border-bottom: 0.5px solid var(--color-three);
+  margin: 0.5rem;
+  border-bottom: 0.1px solid var(--color-three);
+}
+.message p{
+  margin:0.3rem;
 }
 .message_infos{
   color: var(--color-four);
@@ -185,4 +212,23 @@ footer{
   background: linear-gradient(to bottom, var(--color-one),var(--color-two));
   box-shadow: 0 -0.1px 3px 0.05px var(--color-six);
   border-top: 1px solid var(--color-three);
+}
+
+/*OTHER*/
+.hand a{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.fa-hand-point-right{
+  opacity: 0;
+  visibility: hidden;
+  margin-right: 0.5rem;
+  color: white;
+  vertical-align: middle;
+}
+a:hover .fa-hand-point-right, li:hover .hand_1, .sous_liste li:hover .hand_2{
+  visibility: visible;
+  opacity: 1;
 }
