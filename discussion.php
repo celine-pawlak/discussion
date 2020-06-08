@@ -33,6 +33,7 @@ $page_selected = "discussion";
               $login_from_message = mysqli_fetch_array($query); ?>
               <div class="message_infos">
                 <p> <?= $login_from_message[0]; ?> </p>
+                <?="&nbsp;"?>
                 <p> <?= $message_registered[3]; ?> </p>
               </div>
               <div>
@@ -42,9 +43,9 @@ $page_selected = "discussion";
         <?php  }  ?>
         </div>
         <div class="add_message">
-          <form action="discussion.php" method="post">
-            <textarea name="message" value="" placeholder="Send your message" rows="2" cols="500" required></textarea>
-            <button type="submit" name="submit_message">Send</button>
+          <form class="form_discussion" action="discussion.php" method="post">
+            <textarea  class="textarea_message" name="message" value="" placeholder="Send your message" rows="2" required></textarea>
+            <button class="button_message" type="submit" name="submit_message">Send</button>
           </form>
         </div>
       </div>

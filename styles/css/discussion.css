@@ -3,7 +3,7 @@
   --color-two : #000153;
   --color-three : #949599;
   --color-four : #00E3C1;
-  --color-five : #54C7A6;
+  --color-five : #1A2F57;
   --color-six : #090D0C;
 }
 
@@ -14,6 +14,7 @@
 html, body{
   margin: 0;
   padding: 0;
+  height:100vh;
 }
 
 * a{
@@ -39,6 +40,7 @@ body{
   display: flex;
   flex-direction: column;
   background-color: var(--color-six);
+  justify-content: space-between;
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -48,10 +50,11 @@ h1, h2, h3, h4, h5, h6{
 /*HEADER*/
 
 header{
-  background-color: var(--color-one);
+  background: linear-gradient(to bottom, var(--color-one),var(--color-two));
   color:white;
   box-shadow: 0 0.5px 3px 0.1px var(--color-six);
   z-index: 3;
+  border-bottom: 1px solid var(--color-three);
 }
 
 nav{
@@ -62,6 +65,7 @@ nav{
   flex-direction: row;
   align-items: center;
   font-family: 'Headline';
+  font-weight: bold;
 }
 nav div{
   flex:1;
@@ -100,14 +104,85 @@ main{
   min-width: 80vw;
   margin: 0 auto;
   height: 80vh;
-  background-color: var(--color-four);
+  background-color: var(--color-five);
   font-family: 'Normal';
+  border-left: 1px solid var(--color-three);
+  border-right: 1px solid var(--color-three);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/*DISCUSSION*/
+
+.chat_box, .textarea_message, .button_message{
+  background: linear-gradient(to bottom, var(--color-one),var(--color-two));
+  border: 2px solid var(--color-three);
+  border-radius: 10px;
+}
+.chat_box{
+  display: flex;
+  flex-direction: column;
+  height: 60vh;
+  color: var(--color-three);
+  min-width: 80%;
+  overflow: hidden;
+}
+.chat_box:hover{
+  overflow-y: scroll;
+  border-right: inherit;
+}
+.chat_box::-webkit-scrollbar{
+  width: 10px;
+  border-radius: 5px;
+  background-color: var(--color-three);
+}
+.chat_box::-webkit-scrollbar-thumb{
+  background-color: var(--color-four);
+  border-radius: 5px;
+}
+.add_message{
+  min-width: 80%;
+}
+.form_discussion{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.textarea_message:focus{
+  opacity:1;
+  outline: none;
+}
+.textarea_message{
+  min-width: 80%;
+  opacity: 0.5;
+  margin-right: 1rem;
+}
+.button_message{
+  height: 40px;
+  flex: 1;
+  color:white;
+}
+.message{
+  margin: 1rem;
+  border-bottom: 0.5px solid var(--color-three);
+}
+.message_infos{
+  color: var(--color-four);
+  display: flex;
+  justify-content: space-between;
+}
+.textarea_message{
+  resize: none;
+  color:white;
 }
 
 /*FOOTER*/
 
 footer{
   height: 12vh;
-  background-color: var(--color-five);
+  background: linear-gradient(to bottom, var(--color-one),var(--color-two));
   box-shadow: 0 -0.1px 3px 0.05px var(--color-six);
+  border-top: 1px solid var(--color-three);
 }
